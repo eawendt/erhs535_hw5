@@ -54,3 +54,12 @@ no_hom_sf <- sf::st_as_sf(no_hom, coords = c("lon", "lat"), crs = 4269)
 # Orleans Parish code: 22 071
 no_blocks <- tigris::block_groups(state = 22, county = 071, cb = TRUE, class = "sf", progress_bar = FALSE)
 ```
+
+```{r}
+no_hom_plot <- 
+  ggplot2::ggplot() +
+  ggplot2::geom_sf(data = no_blocks, color = "black") +
+  ggplot2::geom_sf(data = no_hom_sf, ggplot2::aes(color = victim_race_3,
+                                                  fill = victim_race_3))
+```
+

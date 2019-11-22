@@ -27,3 +27,9 @@ top_hom_city <- hom_data %>%
   dplyr::arrange(desc(n)) %>% 
   dplyr::ungroup()
 ```
+
+```{r}
+# cities with most homicides
+top_hom_city %>%
+  dplyr::slice(1:10)
+```

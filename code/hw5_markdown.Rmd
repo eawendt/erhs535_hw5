@@ -44,3 +44,8 @@ no_hom <- hom_data %>%
                                          "unsolved" ),
                 victim_race_3 = forcats::fct_lump(victim_race, n = 3))
 ```
+
+```{r}
+# sf object
+no_hom_sf <- sf::st_as_sf(no_hom, coords = c("lon", "lat"), crs = 4269)
+```

@@ -60,6 +60,12 @@ no_hom_plot <-
   ggplot2::ggplot() +
   ggplot2::geom_sf(data = no_blocks, color = "black") +
   ggplot2::geom_sf(data = no_hom_sf, ggplot2::aes(color = victim_race_3,
-                                                  fill = victim_race_3))
+                                                  fill = victim_race_3))+
+  ggplot2::facet_grid(.~ unsolved_label) +
+  viridis::scale_fill_viridis(discrete = TRUE, name = "Victim Race") +
+  viridis::scale_color_viridis(discrete = TRUE, name = "Victim Race") +
+  ggplot2::labs(title = "Homicides in New Orleans", subtitle = "Parish County") +
+  ggplot2::theme_bw()
+no_hom_plot 
 ```
 

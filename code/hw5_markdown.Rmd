@@ -9,3 +9,8 @@ output: pdf_document
 knitr::opts_chunk$set(fig.path = "graphs/", echo = TRUE,
                       warning = FALSE, error = FALSE, message = FALSE)
 ```
+
+```{r}
+hom_data <- 
+  readr::read_csv("../data/homicide-data.csv")
+```

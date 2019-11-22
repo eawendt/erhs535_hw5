@@ -55,7 +55,7 @@ no_hom_sf <- sf::st_as_sf(no_hom, coords = c("lon", "lat"), crs = 4269)
 no_blocks <- tigris::block_groups(state = 22, county = 071, cb = TRUE, class = "sf", progress_bar = FALSE)
 ```
 
-```{r}
+```{r new_orleans_homicides, fig.height=6, fig.width=8}
 no_hom_plot <- 
   ggplot2::ggplot() +
   ggplot2::geom_sf(data = no_blocks, color = "black") +

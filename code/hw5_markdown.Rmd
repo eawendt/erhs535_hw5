@@ -11,6 +11,19 @@ knitr::opts_chunk$set(fig.path = "graphs/", echo = TRUE,
 ```
 
 ```{r}
+library(magrittr)
+```
+
+```{r}
 hom_data <- 
   readr::read_csv("../data/homicide-data.csv")
+```
+
+```{r}
+# choose top homicide city
+top_hom_city <- hom_data %>%
+  dplyr::group_by(city) %>%
+  dplyr::count() %>%
+  dplyr::arrange(desc(n)) %>% 
+  dplyr::ungroup()
 ```

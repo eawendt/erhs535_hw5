@@ -52,5 +52,5 @@ no_hom_sf <- sf::st_as_sf(no_hom, coords = c("lon", "lat"), crs = 4269)
 
 ```{r}
 # Orleans Parish code: 22 071
-no_blocks <- tigris::block_groups(state = 22, county = 071, cb = TRUE, class = "sf")
+no_blocks <- tigris::block_groups(state = 22, county = 071, cb = TRUE, class = "sf", progress_bar = FALSE)
 ```

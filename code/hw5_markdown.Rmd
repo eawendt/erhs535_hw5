@@ -33,3 +33,14 @@ top_hom_city <- hom_data %>%
 top_hom_city %>%
   dplyr::slice(1:10)
 ```
+
+```{r}
+# homicides in New Orleans
+no_hom <- hom_data %>% 
+  dplyr::filter(city == "New Orleans") %>% 
+  dplyr::mutate(unsolved =
+                  disposition %in% c("Open/No arrest", "Closed without arrest"),
+                unsolved_label = dplyr::if_else(unsolved == FALSE, "solved",
+                                         "unsolved" ),
+                victim_race_3 = forcats::fct_lump(victim_race, n = 3))
+```
